@@ -8,7 +8,7 @@ This is a learning repository contains a PyTorch implementation of a GPT-like la
 ## Key Components
 
 ### `train.py`
-- Defines various neural network components such as [`Head`](train.py#L71), [`MultiHeadAttention`](train.py#L97), [`FeedFoward`](train.py#L129), [`Block`](train.py#L129), and [`GPTLanguageModel`](train.py#L148).
+- Defines various neural network components such as [`Head`](train.py#L69), [`MultiHeadAttention`](train.py#L98), [`FeedFoward`](train.py#L114), [`Block`](train.py#L130), and [`GPTLanguageModel`](train.py#L148).
 - Implements the training loop, including data loading, model training, and evaluation.
 - Contains functions for batch generation and loss estimation.
 

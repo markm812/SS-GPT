@@ -1,24 +1,46 @@
-# Summary
-This is a learning repository contains a PyTorch implementation of a GPT-like language model for character-level text generation. The project structure includes the following key files:
-- `dataset/data.txt`: The dataset used for training, containing text data.
-- `model.pth`: The saved model file.
-- `ss-gpt_dev_notebook.ipynb`: A Jupyter notebook for development and experimentation.
-- `train.py`: The main training script.
+# GPT Language Model
 
-## Key Components
+This repository contains the implementation of a GPT-based language model using PyTorch. The model is trained on a text dataset and can be used for Shakespeare play generation tasks.
 
-### `train.py`
-- Defines various neural network components such as [`Head`](train.py#L69), [`MultiHeadAttention`](train.py#L98), [`FeedFoward`](train.py#L114), [`Block`](train.py#L130), and [`GPTLanguageModel`](train.py#L148).
-- Implements the training loop, including data loading, model training, and evaluation.
-- Contains functions for batch generation and loss estimation.
+## Repository Structure
+- `dataloader.py`: Contains the `DataLoader` class for loading and processing the dataset.
+- `dataset/`: Directory containing the text dataset.
+- `hyperparameters.py`: Contains the `Hyperparameters` class for managing model hyperparameters.
+- `model_2000Itr.pth`: Pre-trained model checkpoint.
+- `model.py`: Contains the implementation of the GPT language model and its components.
+- `out.txt`: Output file containing generated text samples.
+- `run.py`: Script for training, evaluating, and running inference with the model.
+- `ss-gpt_dev_notebook.ipynb`: Jupyter notebook for development and experimentation.
+- `tokenizer.py`: Contains the `Tokenizer` and `SimpleTokenizer` classes for encoding and decoding text.
 
-### `ss-gpt_dev_notebook.ipynb`
-- Provides an interactive environment for developing and testing the model.
-- Includes code for data preprocessing, model definition, training, and text generation.
+## Getting Started
 
-## Usage
-1. Download the dataset and place it in the `dataset` directory.
-2. Run `train.py` to train the model.
-3. Use the saved model (`model.pth`) for text generation or further evaluation.
+### Prerequisites
+
+- Python 3.12
+- PyTorch
+- CUDA
+- Jupyter Notebook (optional, for running the notebook)
+
+### Installation
+1. Install the required packages:
+```sh
+pip install -r requirements.txt
+```
+
+### Usage
+
+#### Training the Model
+
+To train the model, run the following command:
+```sh
+python run.py train --checkpoint-output model.pth
+```
+
+#### Evaluate the model
+To evaluate the model, run the following command:
+```sh
+python run.py eval --checkpoint model_2000Itr.pth --output out.txt --inferece-token-size 3000
+```
 
 This repository demonstrates the implementation of a transformer-based language model and provides a foundation for further experimentation and development in natural language processing tasks.
